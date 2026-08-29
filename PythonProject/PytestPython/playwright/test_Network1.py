@@ -1,5 +1,6 @@
 from time import time
 
+import pytest
 from playwright.sync_api import Page
 
 
@@ -10,7 +11,7 @@ def intercept_response(route):
         json = fakePayloadOrderResponse
     )
 
-
+@pytest.mark.smoke
 def test_Network_1(page : Page):
     # login
     page.goto("https://rahulshettyacademy.com/client/")
