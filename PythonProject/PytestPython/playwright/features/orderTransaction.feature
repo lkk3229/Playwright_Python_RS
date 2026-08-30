@@ -6,7 +6,7 @@ Feature: Order Transaction
     Given place the item order with <username> and <password>
     And the user is on landing page
     When I login to portal with <username> and <password>
-    And navigate to order page
+    And navigate to orders page
     And select the orderId
     Then order message is successfully displayed
     Examples:
@@ -14,4 +14,3 @@ Feature: Order Transaction
       | lkk3229@gmail.com | Lkk@3229  |
       | kushk24@gmail.com | Kush@3229 |
 
-    #71

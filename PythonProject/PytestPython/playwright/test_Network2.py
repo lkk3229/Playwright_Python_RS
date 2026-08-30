@@ -1,3 +1,4 @@
+import time
 
 from playwright.sync_api import Page, Playwright, expect
 
@@ -11,7 +12,7 @@ def interceptRequest(route):
 def test_Network_2(page : Page):
     # login
     page.goto("https://rahulshettyacademy.com/client/")
-    page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*", interceptRequest)
+    page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=*",interceptRequest)
     page.get_by_placeholder("email@example.com").fill("lkk3229@gmail.com")
     page.get_by_placeholder("enter your passsword").fill("Lkk@3229")
     page.get_by_role("button", name="Login").click()
